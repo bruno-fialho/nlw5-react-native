@@ -7,12 +7,7 @@ import { UserIdentification } from '../pages/UserIdentification';
 import { Confirmation } from '../pages/Confirmation';
 
 import colors from '../styles/colors';
-
-type RootStackParamList = {
-  Welcome: undefined;
-  UserIdentification: undefined;
-  Confirmation: undefined;
-};
+import { PlantSelect } from '../pages/PlantSelect';
 
 export const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -38,6 +33,10 @@ function StackRoutes() {
       <Stack.Screen
         name="Confirmation"
         component={Confirmation}
+      />
+      <Stack.Screen
+        name="PlantSelect"
+        component={PlantSelect}
       />
     </Stack.Navigator>
   )

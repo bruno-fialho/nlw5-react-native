@@ -1,6 +1,5 @@
 import React from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/core';
 
 import { 
   SafeAreaView, 
