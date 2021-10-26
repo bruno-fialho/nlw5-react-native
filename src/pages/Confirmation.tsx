@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRoute } from '@react-navigation/core';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { 
@@ -13,32 +14,43 @@ import { Button } from '../components/Button';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Welcome'> & {
-  name: string;
-};
+type Props = NativeStackScreenProps<RootStackParamList, 'Confirmation'>;
 
-export function Confirmation({ navigation }: Props) {
+const emojis = {
+  hug: '🤗',
+  smile: '😄'
+}
+
+export function Confirmation({ route, navigation }: Props) {
+  const { 
+    title,
+    subtitle,
+    buttonText,
+    icon,
+    nextScreen,
+   } = route.params;
+
   function handleMoveOn() {
-    navigation.navigate('PlantSelect');
+    navigation.navigate(nextScreen);
   }
 
   return ( 
     <SafeAreaView style={styles.container}>
         <View style={styles.content} >
           <Text style={styles.emoji}>
-            😄
+            {emojis[icon]}
           </Text> 
 
           <Text style={styles.title}>
-            Prontinho
+            {title}
           </Text>
 
           <Text style={styles.subtitle}>
-            Agora vamos começar a cuidar das suas plantinhas com muito cuidado.
+            {subtitle}
           </Text>
 
           <View style={styles.footer}>
-            <Button text="Começar" onPress={handleMoveOn} />
+            <Button text={buttonText} onPress={handleMoveOn} />
           </View>
         </View>
 
@@ -83,4 +95,3 @@ const styles = StyleSheet.create({
     marginTop: 20
   }
 })
-// 1:15:37

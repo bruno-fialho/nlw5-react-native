@@ -14,14 +14,14 @@ import { SvgFromUri } from 'react-native-svg';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
-interface PlantProps extends RectButtonProps {
+interface PlantCardProps extends RectButtonProps {
   data: {
     name: string;
     photo: string;
   }
 }
 
-export const PlantCardPrimary = ({ data, ...rest }: PlantProps) => {
+export const PlantCardPrimary = ({ data, ...rest }: PlantCardProps) => {
   return (
     <RectButton
       style={styles.container}

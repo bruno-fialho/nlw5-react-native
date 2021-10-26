@@ -5,15 +5,18 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject",
-    "server": "json-server server.json -p 3333"
+    "eject": "expo eject"
   },
   "dependencies": {
     "@expo-google-fonts/jost": "^0.2.0",
     "@expo/vector-icons": "^12.0.0",
+    "@react-native-async-storage/async-storage": "~1.15.0",
+    "@react-native-community/datetimepicker": "3.5.2",
+    "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "axios": "^0.23.0",
+    "date-fns": "^2.25.0",
     "expo": "~43.0.0",
     "expo-app-loading": "~1.2.1",
     "expo-font": "~10.0.3",
